@@ -7,7 +7,7 @@ var FilmApi = function( app ) {
   });
 
   app.get('/films/:id', function( req, res ) {
-    res.json({ film: films[req.params.id] });
+    res.json( films[req.params.id] );
   });
 
   app.get('/films', function( req, res ) {
@@ -21,7 +21,7 @@ var FilmApi = function( app ) {
 
   app.put('/films/:id', function( req, res ) {
     films[req.params.id] = req.body.film;
-    res.json({ film: films[req.params.id] });
+    res.json( films[req.params.id] );
   });
 
   app.post('/films', function( req, res ) {
@@ -31,7 +31,7 @@ var FilmApi = function( app ) {
 
   app.post('/films/:id/reviews', function( req, res ) {
     films[req.params.id].reviews.push( req.body.review );
-    res.json({ film: films[req.params.id] })
+    res.json( films[req.params.id] )
   })
 
 }
